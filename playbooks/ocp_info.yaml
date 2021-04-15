@@ -10,3 +10,7 @@
         kind: Pod
         validate_certs: false
       register: pod_list
+
+    - name: Get a list of all pods from any namespace
+      debug:
+        msg: "{{ pod_list }}"
