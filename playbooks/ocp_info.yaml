@@ -14,3 +14,8 @@
     - name: Get a list of all pods from any namespace
       debug:
         msg: "{{ pod_list }}"
+
+    - name: Get a list of all pods from any namespace
+      file:
+        dest: "{{ playbook_dir }}/ocp_info.yaml"
+        content: "{{ pod_list }}"
