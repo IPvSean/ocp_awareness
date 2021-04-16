@@ -11,10 +11,10 @@
         validate_certs: false
       register: pod_list
 
-    - name: Get a list of all pods from any namespace
+    - name: debug everything to terminal window
       debug:
         msg: "{{ pod_list }}"
 
-    - name: diplay template
+    - name: generate report and show in terminal window
       debug:
         msg: "{{ lookup('template', 'templates/report.j2') }}"
