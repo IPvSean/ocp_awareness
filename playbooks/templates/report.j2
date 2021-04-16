@@ -1,8 +1,8 @@
 There are {{ pod_list.resources | length }} pods
 
 
-Pod Name            Launch_Date                UUID
+Pod Name                  Launch_Date                UID
 {% for pod in pod_list.resources %}
-{{ pod.metadata.name }} {{ pod.status.containerStatuses[0].state.running.startedAt }} {% if instance.tags.Name is defined %} {{ instance.tags.Name }} {% endif %}
+{{ pod.metadata.name }}   {{ pod.status.containerStatuses[0].state.running.startedAt }} {{ pod.resources[0].metadata.ownerReferences[0].uid }}
 
 {% endfor %}
