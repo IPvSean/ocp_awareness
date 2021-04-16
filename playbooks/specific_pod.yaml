@@ -8,6 +8,8 @@
     - name: Get a list of all pods from any namespace
       community.kubernetes.k8s_info:
         kind: Pod
+        label_selectors:
+          - app = sean
         validate_certs: false
       register: pod_list
 
