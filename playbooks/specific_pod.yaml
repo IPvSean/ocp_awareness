@@ -9,7 +9,7 @@
       community.kubernetes.k8s_info:
         kind: Pod
         label_selectors:
-          - app = sean
+          - sean
         validate_certs: false
       register: pod_list
 
