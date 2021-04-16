@@ -1,0 +1,16 @@
+---
+- name: this is a test k8 playbook for ansibleautomation
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Get a list of all pods from any namespace
+      community.kubernetes.k8s_info:
+        kind: Pod
+        label_selectors:
+          - app = sean
+        validate_certs: false
+      register: pod_list
+
+    - name: diplay template
+      debug:
+        msg: "{{ lookup('template', 'templates/report.j2') }}"
